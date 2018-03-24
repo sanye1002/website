@@ -31,4 +31,18 @@ public interface IndexCarouselService {
      * @return
      */
     Page<IndexCarousel> findAll(Pageable pageable);
+
+    /**
+     * 查询首页轮播
+     * @param show
+     * @return
+     */
+    List<IndexCarousel> findByShow(Integer show);
+
+    /**
+     * 按Id查询
+     * @param id
+     * @return
+     */
+    IndexCarousel findOne(Integer id);
 }

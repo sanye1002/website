@@ -21,7 +21,6 @@
                 <span class="menu-text">首页设置</span>
                 <i class="menu-expand"></i>
             </a>
-
             <ul class="submenu">
                 <li>
                     <a href="#">
@@ -29,29 +28,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="menu-dropdown">
-                                    <span class="menu-text">
-                                        轮播图
-                                    </span>
-                        <i class="menu-expand"></i>
+                    <a href="" class="menu-dropdown">
+                        <span class="menu-text">轮播图</span>
                     </a>
-
-                    <ul class="submenu">
-                        <li>
-                            <a href="">
-                                <i class="menu-icon fa fa-rocket"></i>
-                                <span class="menu-text">设置</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="menu-icon glyphicon glyphicon-stats"></i>
-                                <span class="menu-text">上传</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-
             </ul>
         </li>
         <!--Tables-->
@@ -77,7 +57,7 @@
             </ul>
         </li>
         <!--Forms-->
-        <li <#if pageId==3|| pageId==4>class="open" </#if>  >
+        <li <#if pageId==3|| pageId==4>class="open" </#if>>
             <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-pencil-square-o"></i>
                 <span class="menu-text"> 文章管理 </span>

@@ -52,15 +52,11 @@ public class ArticleInfoController {
             log.info("【保存文章】 失败信息={}",bindingResult.getFieldError().getDefaultMessage());
             return ResultVOUtil.error(100,bindingResult.getFieldError().getDefaultMessage());
         }
-
         ArticleInfo articleInfo = new ArticleInfo();
        try {
-
-
            if (articleInfo.getId()!=null){
                articleInfo = service.findOne(articleInfoForm.getId());
            }
-
            BeanUtils.copyProperties(articleInfoForm,articleInfo);
            if (articleInfoForm.getId()==null){
                articleInfo.setLookNumber(RandomUtils.getRandom());
@@ -78,7 +74,6 @@ public class ArticleInfoController {
     public ModelAndView list(@RequestParam(value = "page",defaultValue = "1") Integer page,
                              @RequestParam(value = "size",defaultValue = "12") Integer size,
                              Map<String,Object> map){
-
         PageRequest request = new PageRequest(page-1,size);
         Page<ArticleInfo> articleInfoPage = service.findAll(request);
         map.put("pageId",4);
