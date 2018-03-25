@@ -22,13 +22,13 @@
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
-                <li>
+                <li <#if pageId==5|| pageId==6>class="open" </#if>>
                     <a href="#">
                         <span class="menu-text">首页主播</span>
                     </a>
                 </li>
-                <li>
-                    <a href="" class="menu-dropdown">
+                <li <#if pageId==5>class="active" </#if>>
+                    <a href="/oa/carousel/list" class="menu-dropdown">
                         <span class="menu-text">轮播图</span>
                     </a>
                 </li>

@@ -3,6 +3,7 @@ package com.rysj.dataobject;
 import lombok.Data;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -14,9 +15,7 @@ import javax.persistence.Id;
  */
 @Entity
 @Data
-
 public class IndexCarousel {
-
     @Id
     @GeneratedValue
     private Integer id;
@@ -28,7 +27,7 @@ public class IndexCarousel {
     /**
      * 展示 0不展示 1 展示 默认0
      */
-    private Integer show = 0;
+    private Integer show;
 
     public IndexCarousel() {
     }

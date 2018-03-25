@@ -12,7 +12,7 @@
     <!-- 页面内容 -->
     <div class="page-container">
         <!-- 侧边栏导航 -->
-       <#include "../common/sider.ftl">
+    <#include "../common/sider.ftl">
         <!-- /侧边栏导航 -->
         <!-- Page Content -->
         <div class="page-content">
@@ -67,10 +67,10 @@
                                         id
                                     </th>
                                     <th>
-                                        结果路径
+                                        图片
                                     </th>
                                     <th>
-                                        上传时间
+                                        结果路径
                                     </th>
                                     <th>
                                         首页展示
@@ -78,26 +78,32 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <#list pageContent.getContent() as index>
                                 <tr>
-                                    <td >
-                                        1
+                                    <td>
+                                    ${index.getId}
                                     </td>
                                     <td>
-                                        Steve
+                                        <img src=" ${index.getPath()}" height="40px">
                                     </td>
                                     <td>
-                                        Jobs
+                                    ${index.getPath()}
                                     </td>
                                     <td>
                                         <label>
-                                            <input id="1" class="checkbox-slider colored-blue" type="checkbox" checked>
+                                            <input id="${index.getId}" class="checkbox-slider colored-blue"
+                                                   type="checkbox"
+                                                   <#if index.getShow ==1>checked</#if>>
                                             <span class="text"></span>
                                         </label>
 
                                     </td>
                                 </tr>
+                                </#list>
+
                                 </tbody>
                             </table>
+                        <#include "../common/page.ftl">
                         </div>
                         <div class="well with-header with-footer">
                             <div class="header bordered-sky">
@@ -128,11 +134,18 @@
 
 <#include "../common/footjs.ftl">
 <script type="text/javascript">
+    var carousel = {
+        id: "",
+        path: "",
+        show: ""
+    }
     $("input[type=checkbox]").click(function () {
         //判断是否选中
         if ($(this).is(':checked')) {
-            console.log("xuanzhog")
-        }else {
+            carousel.id = $(this).attr("id")
+
+        } else {
+            carousel.id = $(this).attr("id")
             console.log($(this).attr("id"))
         }
     })
@@ -145,7 +158,7 @@
             //普通图片上传
             var uploadInst = upload.render({
                 elem: '#upload',
-                url: '/upload/img/anchor',
+                url: '/upload/img/carousel',
                 before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
@@ -155,14 +168,14 @@
                 , done: function (res) {
                     //上传成功
                     if (res.code == 0) {
-                        return layer.msg(res.message);
+                        carousel.path = res.data.src;
+                        save()
                     }
 
                     //如果上传失败
                     if (res.code > 0) {
                         return layer.msg(res.message);
                     }
-
 
                 }
                 , error: function () {
@@ -175,6 +188,26 @@
                 }
             });
         });
+        function save() {
+            $.post(
+                    "/oa/carousel/save",
+                    {
+                        path: carousel.path,
+                        show: 0
+                    },
+                    function (data) {
+                        if (data.code == 0) {
+                            layer.msg(data.message);
+                            setTimeout(function () {
+                                location = "/oa/carousel/list"
+                            }, 2000)
+                        } else {
+                            layer.msg(data.message);
+                        }
+
+                    }
+            )
+        }
     })
 
 
