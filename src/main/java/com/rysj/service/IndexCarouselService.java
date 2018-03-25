@@ -37,7 +37,7 @@ public interface IndexCarouselService {
      * @param show
      * @return
      */
-    List<IndexCarousel> findByShow(Integer show);
+    List<IndexCarousel> findByShowStatus(Integer show);
 
     /**
      * 按Id查询

@@ -11,5 +11,6 @@ import java.util.List;
  * @create 2018-03-20 下午 1:36
  */
 public interface IndexCarouselRepository extends JpaRepository<IndexCarousel,Integer>{
-    List<IndexCarousel> findByShow(Integer show);
+
+    List<IndexCarousel> findByShowStatus(Integer show);
 }

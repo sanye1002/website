@@ -3,7 +3,6 @@ package com.rysj.dataobject;
 import lombok.Data;
 
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -23,11 +22,11 @@ public class IndexCarousel {
     /**
      * 路径
      */
-    private String path;
+    private String pathUrl ;
     /**
      * 展示 0不展示 1 展示 默认0
      */
-    private Integer show;
+    private Integer showStatus ;
 
     public IndexCarousel() {
     }

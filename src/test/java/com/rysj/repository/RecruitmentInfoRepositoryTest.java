@@ -1,6 +1,6 @@
 package com.rysj.repository;
 
-import com.rysj.dataobject.IndexCarousel;
+import com.rysj.dataobject.RecruitmentInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,21 +12,15 @@ import static org.junit.Assert.*;
 
 /**
  * Created by 超级战机
- * 2018-03-25 18:06
+ * 2018-03-25 20:22
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Slf4j
-public class IndexCarouselRepositoryTest {
+public class RecruitmentInfoRepositoryTest {
+
     @Autowired
-    private IndexCarouselRepository repository;
-    @Test
-    public void findByShow() throws Exception {
-        IndexCarousel carousel = new IndexCarousel();
-        carousel.setShowStatus(1);
-        carousel.setPathUrl("/up/ff/fff");
-        repository.save(carousel);
-    }
+    private RecruitmentInfoRepository recruitmentInfoRepository;
 
-
+   
 }

@@ -15,14 +15,14 @@
         </li>
 
         <!--UI Elements-->
-        <li>
+        <li <#if pageId==5|| pageId==6>class="open" </#if>>
             <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-desktop"></i>
                 <span class="menu-text">首页设置</span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
-                <li <#if pageId==5|| pageId==6>class="open" </#if>>
+                <li >
                     <a href="#">
                         <span class="menu-text">首页主播</span>
                     </a>

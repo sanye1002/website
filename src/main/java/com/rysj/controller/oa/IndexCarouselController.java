@@ -45,10 +45,10 @@ public class IndexCarouselController {
         try {
             if (carouselForm.getId() != null) {
                 indexCarousel = service.findOne(carouselForm.getId());
-                indexCarousel.setShow(carouselForm.getShow());
+                indexCarousel.setShowStatus(carouselForm.getShow());
                 log.info("【保存轮播图片】 id={}",carouselForm.getId());
                 if (carouselForm.getShow() == 1) {
-                    if (service.findByShow(1).size() > 6) {
+                    if (service.findByShowStatus(1).size() > 6) {
                         return ResultVOUtil.error(100, "首页图不能多于6张");
                     } else {
                         service.save(indexCarousel);

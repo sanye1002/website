@@ -38,8 +38,8 @@ public class IndexCarouselServiceImpl implements IndexCarouselService{
     }
 
     @Override
-    public List<IndexCarousel> findByShow(Integer show) {
-        return repository.findByShow(show);
+    public List<IndexCarousel> findByShowStatus(Integer show) {
+        return repository.findByShowStatus(show);
     }
 
     @Override

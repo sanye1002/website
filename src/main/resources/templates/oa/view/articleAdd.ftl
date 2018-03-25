@@ -105,7 +105,7 @@
                                 <div class="col-sm-12">
                                     <textarea id="demo" style="display: none;"></textarea>
                                     <div style="float:right;margin-top:10px;">
-                                        <button id="save" class="btn btn-success" disabled>保存</button>
+                                        <button id="save" class="btn btn-success" >保存</button>
                                     </div>
                                 </div>
                             </div>
